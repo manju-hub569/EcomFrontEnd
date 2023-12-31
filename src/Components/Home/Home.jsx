@@ -1,5 +1,7 @@
 import './Home.css';
 import CardItems from '../CardItems/CardItems';
+import Footer from '../Footer/Footer';
+
 export default function Home () {
 
     const data = [
@@ -43,6 +45,8 @@ export default function Home () {
                 }
                 </div>
             </div>
+
+            <Footer />
         </>
     )
 }
