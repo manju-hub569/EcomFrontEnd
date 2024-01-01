@@ -8,8 +8,6 @@ export default function Main () {
     const val = useSelector(state => state.incDecReduce);
     const dispatch = useDispatch();
 
-    console.log(val)
-
     return (
         <>
             {/* <h1>

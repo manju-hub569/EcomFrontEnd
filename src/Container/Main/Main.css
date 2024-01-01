@@ -1,6 +1,7 @@
 
 nav {
     box-shadow: 0px 0px 2px grey;
+    background-color: white;
 }
 
 .navContent {
@@ -8,6 +9,7 @@ nav {
     justify-content: space-around;
     align-items: center;
     width : 100vw;
+    background-color: white;
 }
 
 div ul {
@@ -26,7 +28,7 @@ div ul {
 .listCont ul li {
     cursor: pointer;
     color : #333333;
-    font-family: 'Poppins-Medium';
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.1rem;
     font-weight: bold;
 }

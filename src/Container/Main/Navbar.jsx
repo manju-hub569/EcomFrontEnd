@@ -12,7 +12,7 @@ export function Navbar () {
 
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-light">
+            <nav className="navbar navbar-expand-lg navbar-light" style = {{position : 'sticky' , top : 0, left : 0, zIndex : 99}}>
                 <div className = 'navContent'>
                 
                     <div className = "navNAme">

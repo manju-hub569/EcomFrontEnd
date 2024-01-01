@@ -1,0 +1,43 @@
+footer {
+    height : 20rem;
+    background-color: #222222;
+}
+
+footer h5 {
+    color : white;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.footList {
+    margin-top : 2rem
+}
+
+.footList ul {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.footList li {
+    color : white;
+    font-size: 0.9rem;
+    line-height: 2rem;
+    color : #B2B2B2B2;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.listOne li{
+    width : 10rem
+}
+
+.listTwo li{
+    width :5rem
+}
+
+.listThree li{
+    width :11rem;
+    line-height: 1rem;
+    
+    font-size: 1rem;
+}
