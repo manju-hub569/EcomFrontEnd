@@ -16,7 +16,7 @@ const CardItems = ({items}) => {
                             <CiHeart fontSize={'2rem'} />
                         </div>
                     </div>
-                    jdbksjdf
+                    {/* jdbksjdf */}
                 </div>
             </div>
         </>
