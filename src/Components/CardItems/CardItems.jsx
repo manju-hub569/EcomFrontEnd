@@ -11,12 +11,14 @@ const CardItems = ({items}) => {
                 </div>
                 <div className="subcard">
                     <div className = "prodName">
-                        <div>{items.title}</div>
+                        <div className = "itemTitle">{items.title}</div>
                         <div>
                             <CiHeart fontSize={'2rem'} />
                         </div>
                     </div>
-                    {/* jdbksjdf */}
+                    <div className = "cart">
+                        ${items.price}
+                    </div>
                 </div>
             </div>
         </>
