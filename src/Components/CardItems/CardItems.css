@@ -1,0 +1,38 @@
+.cards {
+    width : 30rem;
+    height : 20rem;
+    box-shadow: 0px 0px 2px grey;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    /* padding : 1rem */
+}
+
+.imgCard {
+    width : 20rem;
+    height : 70%; 
+    /* border : 1px solid lightgrey; */
+}
+
+.imgCard img {
+    width : 19rem;
+    height : 100%; 
+    object-fit: contain;
+}
+
+.subcard {
+    width : 20rem;
+    height : 30%; 
+    border-top : 1px solid lightgrey;
+}
+
+.prodName {
+    padding : 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.prodName div {
+    font-family: 'Montserrat';
+    font-size: 0.9rem;
+}

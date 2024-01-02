@@ -5,3 +5,15 @@
 .prod_head h3 {
     font-weight: bolder;
 }
+
+.searchBox {
+    border : 1px solid lightgrey;
+    padding : 5px;
+    border-radius : 0.2rem;
+}
+
+.searchBox input {
+    border : none;
+    outline : none;
+    font-family: 'Montserrat';
+}
