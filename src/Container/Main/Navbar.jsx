@@ -25,7 +25,7 @@ export function Navbar () {
                             <li>Electronics</li>
                             <li>Jewelery</li>
                             <li>Men's Cloth</li>
-                            <li>Women Cloth</li>
+                            <li>Women's Cloth</li>
                         </ul>
                     </div>
 
