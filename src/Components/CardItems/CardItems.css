@@ -39,7 +39,7 @@
 }
 
 .wishList :hover {
-    color: blue;
+    color: rgb(122, 122, 247);
     cursor: pointer;
 }
 
