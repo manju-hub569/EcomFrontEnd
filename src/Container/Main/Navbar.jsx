@@ -5,6 +5,7 @@ import { BsCart } from "react-icons/bs";
 import { IoPersonOutline } from "react-icons/io5";
 import { useDispatch } from 'react-redux';
 import { apiCall } from '../../Redux/Reducers/ChangeNum';
+import Modal from './Modal';
 
 export function Navbar () {
 
@@ -33,12 +34,14 @@ export function Navbar () {
                         <ul>
                             <li><CiHeart style = {{fontSize : '32px'}} /> <label>1</label>  </li>
                             <li><BsCart style = {{fontSize : '30px'}} /> <label>1</label> </li>
-                            <li><IoPersonOutline style = {{fontSize : '30px'}} /></li>
+                            <li data-toggle="modal" data-target="#exampleModalCenter"><IoPersonOutline style = {{fontSize : '30px'}} /></li>
                         </ul>
                     </div>
 
                 </div>
             </nav>
+
+            <Modal />
         </>
     )
 }
