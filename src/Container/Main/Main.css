@@ -39,13 +39,35 @@ div ul {
     color : #333333
 }
 
+.iconList {
+    width : 200px
+}
+
 .iconList ul {
-    width : 10rem;
-    margin-top: 0.8rem
+    width : 15rem;
+    margin-top: 0.8rem;
 }
 
 .iconList ul li {
     cursor: pointer;
+    /* border : 1px solid red; */
+}
+
+.iconList ul li label {
+    position: relative;
+    top : -12px;
+    left: -16px;
+    border : 1px solid blue;
+    border-radius: 50%;
+    width : 18px;
+    height : 18px;
+    text-align: center;
+    padding-bottom: 5px;
+    color : white;
+    background-color: blue;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: 'Montserrat';
 }
 
 .navNAme {
