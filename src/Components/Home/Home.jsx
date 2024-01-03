@@ -13,6 +13,7 @@ export default function Home () {
     },[]);
 
     const [data, setData] = useState([]);
+    const [search , searchItem] = useState('');
 
     return (
         <>
@@ -24,7 +25,7 @@ export default function Home () {
                         <div className = "col-6 dflex alignCenter justifyEnd">
                             <div className = "searchBox">
                                 <IoIosSearch fontSize={'30px'} />
-                                <input type = "text" placeholder='  Search Items' />
+                                <input type = "text" placeholder='  Search Items' onChange = {(e) => searchItem(e.target.value)} />
                             </div>
                         </div>
                 </div>
@@ -40,13 +41,21 @@ export default function Home () {
                         })
                     }
                 {
-                    data.map((val , i) => {
-                        return (
-                            <div className = "col-3 prod_head dflex alignCenter justifyCenter">
-                                <CardItems items = {val} />
-                            </div>
-                        )
-                    })
+
+                    data.filter((dt) => {
+                        if(search === '') {
+                            return dt;
+                        } else if (dt.title.toLowerCase().includes(search.toLowerCase())) {
+                            return dt;
+                        }
+                    }).map((val , i) => {
+                            return (
+                                <div className = "col-3 prod_head dflex alignCenter justifyCenter">
+                                    <CardItems items = {val} />
+                                </div>
+                            )
+                        })
+
                 }
                 </div>
             </div>

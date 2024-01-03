@@ -18,6 +18,7 @@ export default function Main () {
             {/* <button className='btn btn-primary' onClick = {() => dispatch(increment())}>Call API</button> */}
 
             <Outlet />
+
         </>
     )
 }
