@@ -1,6 +1,7 @@
 import React from 'react';
 import './CardItems.css';
 import { CiHeart } from "react-icons/ci";
+import { BsCart } from "react-icons/bs";
 
 const CardItems = ({items}) => {
     return (
@@ -17,7 +18,7 @@ const CardItems = ({items}) => {
                         </div>
                     </div>
                     <div className = "cart">
-                        ${items.price}
+                        ${items.price}  <button> Add to Cart <BsCart /></button>
                     </div>
                 </div>
             </div>

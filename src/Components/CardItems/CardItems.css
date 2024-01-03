@@ -44,4 +44,9 @@
 .cart {
     padding : 0.5rem;
     font-family: 'Montserrat';
+    /* border : 1px solid red; */
+    height : 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
