@@ -38,6 +38,12 @@ const FootComp = () => {
                         </div>
                     </div>
                 </div>
+
+
+            <div className = "cpyright mt-4">
+                Copyright ©2024 All rights reserved
+            </div>
+
             </footer>
         </>
     )

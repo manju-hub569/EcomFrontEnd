@@ -33,7 +33,7 @@ export function Navbar () {
                     <div className = "iconList">
                         <ul>
                             <li><CiHeart style = {{fontSize : '32px'}} /> <label>1</label>  </li>
-                            <li><BsCart style = {{fontSize : '30px'}} /> <label>1</label> </li>
+                            <li><BsCart style = {{fontSize : '30px'}} /> <label>2</label> </li>
                             <li data-toggle="modal" data-target="#exampleModalCenter"><IoPersonOutline style = {{fontSize : '30px'}} /></li>
                         </ul>
                     </div>

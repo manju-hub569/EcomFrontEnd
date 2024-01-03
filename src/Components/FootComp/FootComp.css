@@ -41,3 +41,10 @@ footer h5 {
     
     font-size: 1rem;
 }
+
+.cpyright {
+    color : grey;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 0.9rem;
+}
