@@ -1,7 +1,7 @@
 .cards {
     width : 30rem;
     height : 20rem;
-    box-shadow: 0px 0px 2px grey;
+    box-shadow: 0px 0px 1px grey;
     margin-top: 1rem;
     margin-bottom: 2rem;
     /* padding : 1rem */
@@ -37,6 +37,11 @@
     font-size: 0.9rem;
 }
 
+.wishList :hover {
+    color: blue;
+    cursor: pointer;
+}
+
 .itemTitle {
     height : 2.5rem
 }
@@ -44,7 +49,7 @@
 .cart {
     padding : 0.5rem;
     font-family: 'Montserrat';
-    /* border : 1px solid red; */
+    font-weight: bold;
     height : 2rem;
     display: flex;
     align-items: center;

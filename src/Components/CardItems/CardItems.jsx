@@ -13,7 +13,7 @@ const CardItems = ({items}) => {
                 <div className="subcard">
                     <div className = "prodName">
                         <div className = "itemTitle">{items.title}</div>
-                        <div>
+                        <div className = "wishList">
                             <CiHeart fontSize={'2rem'} />
                         </div>
                     </div>
