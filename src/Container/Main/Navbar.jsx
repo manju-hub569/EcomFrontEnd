@@ -1,15 +1,10 @@
 import './Main.css';
-import shop_icon from '../../assets/shop_icon.png';
 import { CiHeart } from "react-icons/ci";
 import { BsCart } from "react-icons/bs";
 import { IoPersonOutline } from "react-icons/io5";
-import { useDispatch } from 'react-redux';
-import { apiCall } from '../../Redux/Reducers/ChangeNum';
 import Modal from './Modal';
 
 export function Navbar () {
-
-    const dispatch = useDispatch();
 
     return (
         <>

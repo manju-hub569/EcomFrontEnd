@@ -3,16 +3,20 @@ import CardItems from '../CardItems/CardItems';
 import FootComp from '../FootComp/FootComp';
 import { useEffect , useState} from 'react';
 import { IoIosSearch } from "react-icons/io";
+import { useSelector , useDispatch} from 'react-redux';
+import { apiCall } from '../../Redux/Reducers/ChangeNum';
 
 export default function Home () {
 
-    useEffect(() => {
-        fetch('https://fakestoreapi.com/products')
-        .then(res=>res.json())
-        .then(json =>setData(json));
-    },[]);
+    const dispatch = useDispatch();
+    const categ_data = useSelector((state) => state.getReducer.getDataApi.payload);
 
-    const [data, setData] = useState([]);
+    useEffect(() => {
+
+        dispatch(apiCall());
+
+    },[dispatch]);
+
     const [search , searchItem] = useState('');
 
     return (
@@ -34,27 +38,28 @@ export default function Home () {
             <div className = "container mt-1">
                 <div className = "row">
                     {
-                        data.forEach((val) => {
+                        categ_data ? categ_data.forEach((val) => {
                             if(val.title.length > 65) {
                                 val.title = `BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats`
                             }
-                        })
+                        }) : []
                     }
                 {
 
-                    data.filter((dt) => {
+                categ_data ? categ_data.filter((dt) => {
                         if(search === '') {
-                            return dt;
+                            return true;
                         } else if (dt.title.toLowerCase().includes(search.toLowerCase())) {
-                            return dt;
+                            return true;
                         }
+                        return false
                     }).map((val , i) => {
                             return (
                                 <div className = "col-3 prod_head dflex alignCenter justifyCenter">
                                     <CardItems items = {val} />
                                 </div>
                             )
-                        })
+                        }) : []
 
                 }
                 </div>

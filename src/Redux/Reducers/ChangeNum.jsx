@@ -31,9 +31,9 @@ export const getReducer = (state = init , action) => {
 
 export const apiCall = () => {
     return (dispatch) => {
-        axios.get('https://jsonplaceholder.typicode.com/todos').then((data) => {
-            const user = data.data.map(val => val);
-            dispatch(getApiCall(user));
+        axios.get('https://fakestoreapi.com/products').then((data) => {
+            const categ = data.data.map(val => val);
+            dispatch(getApiCall(categ));
         })
     }
 }
