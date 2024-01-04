@@ -1,6 +1,6 @@
 import axios from "axios";
-import { INC , DEC, FETCH_DATA_SUCCESS } from "../ActionTypes";
-import { getApiCall } from "../Action";
+import { INC , DEC, FETCH_DATA_SUCCESS, FETCH_JEWEL_SUCCESS } from "../ActionTypes";
+import { getApiCall, jewelapi } from "../Action";
 
 const initialState = 0;
 
@@ -25,6 +25,10 @@ export const getReducer = (state = init , action) => {
             ...state , getDataApi : {loading : false , payload : action.payload }
         }
 
+        case FETCH_JEWEL_SUCCESS : return {
+            ...state , getDataApi : {loading : false , payload : action.payload }
+        }
+
         default : return state
     }
 }
@@ -34,6 +38,15 @@ export const apiCall = () => {
         axios.get('https://fakestoreapi.com/products').then((data) => {
             const categ = data.data.map(val => val);
             dispatch(getApiCall(categ));
+        })
+    }
+}
+
+export const apicalljewel = () => {
+    return (dispatch) => {
+        axios.get('https://fakestoreapi.com/products/Jewelery').then((data) => {
+            const jewelcateg = data.data.map(val => val);
+            dispatch(jewelapi(jewelcateg));
         })
     }
 }
