@@ -3,7 +3,7 @@ import { CiHeart } from "react-icons/ci";
 import { BsCart } from "react-icons/bs";
 import { IoPersonOutline } from "react-icons/io5";
 import { useDispatch } from 'react-redux';
-import { apicalljewel } from '../../Redux/Reducers/ChangeNum';
+import { apicallcateg } from '../../Redux/Reducers/ChangeNum';
 import { apiCall } from '../../Redux/Reducers/ChangeNum';
 import Modal from './Modal';
 
@@ -23,10 +23,10 @@ export function Navbar () {
 
                     <div className = "listCont">
                         <ul>
-                            <li>Electronics</li>
-                            <li onClick = {() => dispatch(apicalljewel())}>Jewelery</li>
-                            <li>Men's Cloth</li>
-                            <li>Women's Cloth</li>
+                            <li onClick = {() => dispatch(apicallcateg('electronics'))}>Electronics</li>
+                            <li onClick = {() => dispatch(apicallcateg('jewelery'))}>Jewelery</li>
+                            <li onClick = {() => dispatch(apicallcateg(`men's%20clothing`))}>Men's Cloth</li>
+                            <li onClick = {() => dispatch(apicallcateg(`women's%20clothing`))}>Women's Cloth</li>
                         </ul>
                     </div>
 

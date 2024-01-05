@@ -1,4 +1,4 @@
-import { INC , DEC, FETCH_DATA_SUCCESS , FETCH_JEWEL_SUCCESS } from "../ActionTypes";
+import { INC , DEC, FETCH_DATA_SUCCESS , FETCH_CATEG_SUCCESS } from "../ActionTypes";
 
 export const increment = () => {
     return {
@@ -19,9 +19,9 @@ export const getApiCall = (user) => {
     }
 }
 
-export const jewelapi = (data) => {
+export const categapi = (data) => {
     return {
-        type : FETCH_JEWEL_SUCCESS ,
+        type : FETCH_CATEG_SUCCESS ,
         payload : data
     }
 }
