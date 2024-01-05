@@ -9,10 +9,10 @@ const FootComp = () => {
                         <h5>CATEGORIES</h5>
                         <div className = "footList listOne">
                             <ul>
-                                <li>Electronics</li>
-                                <li>Jewelery</li>
-                                <li>Men's Cloth</li>
                                 <li>Women Cloth's</li>
+                                <li>Men's Cloth</li>
+                                <li>Jewelery</li>
+                                <li>Electronics</li>
                             </ul>
                         </div>
                     </div>
