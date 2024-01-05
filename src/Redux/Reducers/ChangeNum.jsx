@@ -44,7 +44,7 @@ export const apiCall = () => {
 
 export const apicalljewel = () => {
     return (dispatch) => {
-        axios.get('https://fakestoreapi.com/products/Jewelery').then((data) => {
+        axios.get('https://fakestoreapi.com/products/category/jewelery').then((data) => {
             const jewelcateg = data.data.map(val => val);
             dispatch(jewelapi(jewelcateg));
         })

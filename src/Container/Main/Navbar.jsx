@@ -22,7 +22,7 @@ export function Navbar () {
 
                     <div className = "listCont">
                         <ul>
-                            <li onClick = {dispatch(apicalljewel())}>Electronics</li>
+                            <li onClick = {() => dispatch(apicalljewel())}>Electronics</li>
                             <li>Jewelery</li>
                             <li>Men's Cloth</li>
                             <li>Women's Cloth</li>
