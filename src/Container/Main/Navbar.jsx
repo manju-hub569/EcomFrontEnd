@@ -4,6 +4,7 @@ import { BsCart } from "react-icons/bs";
 import { IoPersonOutline } from "react-icons/io5";
 import { useDispatch } from 'react-redux';
 import { apicalljewel } from '../../Redux/Reducers/ChangeNum';
+import { apiCall } from '../../Redux/Reducers/ChangeNum';
 import Modal from './Modal';
 
 export function Navbar () {
@@ -15,15 +16,15 @@ export function Navbar () {
             <nav className="navbar navbar-expand-lg navbar-light" style = {{position : 'sticky' , top : 0, left : 0, zIndex : 99}}>
                 <div className = 'navContent'>
                 
-                    <div className = "navNAme">
+                    <div className = "navNAme" onClick = {() => dispatch(apiCall())}>
                         <span className = "nameOne">COZA</span>
                         <span className = "nameTwo">Store .</span>
                     </div>
 
                     <div className = "listCont">
                         <ul>
-                            <li onClick = {() => dispatch(apicalljewel())}>Electronics</li>
-                            <li>Jewelery</li>
+                            <li>Electronics</li>
+                            <li onClick = {() => dispatch(apicalljewel())}>Jewelery</li>
                             <li>Men's Cloth</li>
                             <li>Women's Cloth</li>
                         </ul>

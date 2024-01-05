@@ -29,14 +29,14 @@ div ul {
     cursor: pointer;
     color : #333333;
     font-family: 'Montserrat';
-    font-weight : 550;
+    font-weight : 900;
     font-size: 1.1rem;
 }
 
 .listCont ul li:hover {
     cursor: pointer;
     font-weight: bold;
-    color : #333333
+    color : #7A7AF7
 }
 
 .iconList {
