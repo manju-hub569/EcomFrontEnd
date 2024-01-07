@@ -39,8 +39,8 @@ export const getReducer = (state = init , action) => {
 
 export const apiCall = () => {
     return (dispatch) => {
-        axios.get('https://fakestoreapi.com/products').then((data) => {
-            const categ = data.data.map(val => val);
+        axios.get('http://localhost:3001/api/categAllProd').then((data) => {
+            const categ = data.data.data.map(val => val);
             dispatch(getApiCall(categ));
         })
     }
@@ -48,8 +48,8 @@ export const apiCall = () => {
 
 export const apicallcateg = (category) => {
     return (dispatch) => {
-        axios.get(`https://fakestoreapi.com/products/category/${category}`).then((data) => {
-            const jewelcateg = data.data.map(val => val);
+        axios.get(`http://localhost:3001/api/categSingleCateg/${category}`).then((data) => {
+            const jewelcateg = data.data.data.map(val => val);
             dispatch(categapi(jewelcateg));
         })
     }
