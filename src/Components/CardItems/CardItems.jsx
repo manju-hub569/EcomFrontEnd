@@ -2,8 +2,20 @@ import React from 'react';
 import './CardItems.css';
 import { CiHeart } from "react-icons/ci";
 import { BsCart } from "react-icons/bs";
+import axios from 'axios';
 
 const CardItems = ({items}) => {
+
+    const addToCart = () => {
+        axios.post('http://localhost:3001/api/addToCart' , {
+            userid : "65840c38bd36b9ede0c46bba", title : "test" , price : "234" , description : "test" , category : "test" , image : "test"
+        }).then(data => {
+            if(data) {
+                console.log('add to cart successfully')
+            }
+        });
+    }
+
     return (
         <>
             <div className = "cards">
@@ -18,7 +30,7 @@ const CardItems = ({items}) => {
                         </div>
                     </div>
                     <div className = "cart">
-                        ${items.price}  <button> Add to Cart <BsCart /></button>
+                        ${items.price}  <button onClick={addToCart}> Add to Cart <BsCart /></button>
                     </div>
                 </div>
             </div>

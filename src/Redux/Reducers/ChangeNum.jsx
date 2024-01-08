@@ -1,4 +1,4 @@
-import axios from "axios";
+import { getCall } from "../../methods/apimethods";
 import { INC , DEC, FETCH_DATA_SUCCESS, FETCH_CATEG_SUCCESS , FETCH_ELEC_SUCCESS} from "../ActionTypes";
 import { getApiCall, categapi } from "../Action";
 
@@ -39,7 +39,7 @@ export const getReducer = (state = init , action) => {
 
 export const apiCall = () => {
     return (dispatch) => {
-        axios.get('http://localhost:3001/api/categAllProd').then((data) => {
+        getCall('http://localhost:3001/api/categAllProd').then((data) => {
             const categ = data.data.data.map(val => val);
             dispatch(getApiCall(categ));
         })
@@ -48,7 +48,7 @@ export const apiCall = () => {
 
 export const apicallcateg = (category) => {
     return (dispatch) => {
-        axios.get(`http://localhost:3001/api/categSingleCateg/${category}`).then((data) => {
+        getCall(`http://localhost:3001/api/categSingleCateg/${category}`).then((data) => {
             const jewelcateg = data.data.data.map(val => val);
             dispatch(categapi(jewelcateg));
         })
