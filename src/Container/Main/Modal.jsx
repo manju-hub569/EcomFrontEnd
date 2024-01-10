@@ -1,13 +1,25 @@
+import { postCall } from '../../methods/apimethods';
 import './Main.css';
 import { useRef } from 'react';
+import { baseurl } from '../../methods/enpoints';
 
 export default function Modal () {
 
     const userRef = useRef(null);
     const passRef = useRef(null);
 
-    const SubForm = () => {
-        alert(userRef.current?.value)
+    const SubForm = async () => {
+        try {
+          const resp = await postCall(`${baseurl}login` , {username : userRef.current?.value, password : passRef.current?.value}) ;
+          if(resp) {
+            alert('success');
+          } else {
+            alert('unsuccess');
+          }
+        } catch (error) {
+            console.log(error);
+            alert('failed')
+        }
     }
 
     return (
