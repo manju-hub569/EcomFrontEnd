@@ -1,6 +1,15 @@
 import './Main.css';
+import { useRef } from 'react';
 
 export default function Modal () {
+
+    const userRef = useRef(null);
+    const passRef = useRef(null);
+
+    const SubForm = () => {
+        alert(userRef.current?.value)
+    }
+
     return (
         <>
             <div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -14,15 +23,15 @@ export default function Modal () {
 
                                 <div className = "inpts">
                                     <div className = "inpt">
-                                        <input type = "text"  />
+                                        <input type = "text" placeholder='username' ref={userRef} />
                                     </div>
                                     <div className = "inpt">
-                                        <input type = "password" />
+                                        <input type = "password" placeholder='password' ref = {passRef} />
                                     </div>
                                 </div>
 
                                 <div className = "log-btn">
-                                    <button>
+                                    <button onClick = {SubForm}>
                                         Logn In
                                     </button>
                                 </div>
