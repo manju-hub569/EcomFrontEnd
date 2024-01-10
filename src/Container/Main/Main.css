@@ -83,3 +83,24 @@ div ul {
 .nameTwo {
     font-size: 1.5rem;
 }
+
+.mbox {
+    max-width : 300px;
+}
+
+.log_label strong {
+    font-family : 'Montserrat';
+}
+
+/* .inpts {
+    
+} */
+
+.inpt {
+    padding : 0.5rem 0rem;
+}
+
+input {
+    width : 100%;
+    outline : none;
+}
