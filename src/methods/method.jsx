@@ -5,5 +5,5 @@ export const setCookie = (name , value , expiry) => {
 }
 
 export const getCookie = (name) => {
-    Cookies.get(name);
+    return Cookies.get(name);
 }
