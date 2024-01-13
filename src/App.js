@@ -20,15 +20,15 @@ function App() {
   return (
     <>
       <Provider store = {store}>
-      <AlertProvider template={AlertTemplate} {...options}>
-          <BrowserRouter>
-              <Routes>
-                  <Route exact path = '/' element={<Main />} >
-                      <Route index  element={<Home />}/>
-                  </Route>
-              </Routes>
-          </BrowserRouter>
-        </AlertProvider>
+        <AlertProvider template={AlertTemplate} {...options}>
+            <BrowserRouter>
+                <Routes>
+                    <Route exact path = '/' element={<Main />} >
+                        <Route index  element={<Home />}/>
+                    </Route>
+                </Routes>
+            </BrowserRouter>
+          </AlertProvider>
       </Provider>
     </>
   );
