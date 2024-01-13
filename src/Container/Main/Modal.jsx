@@ -4,10 +4,11 @@ import { useRef } from 'react';
 import { baseurl } from '../../methods/enpoints';
 
 import { useAlert } from 'react-alert'
+import { setCookie } from '../../methods/method';
 
 export default function Modal () {
 
-    const alert = useAlert()
+    const showModal = useAlert()
 
     const userRef = useRef(null);
     const passRef = useRef(null);
@@ -16,8 +17,9 @@ export default function Modal () {
         try {
           const resp = await postCall(`${baseurl}login` , {username : userRef.current?.value, password : passRef.current?.value}) ;
           if(resp) {
+            setCookie('token' , resp.data.token , 7);
             closeModel();
-            alert.show('Login Success')
+            showModal.show(resp.data.msg)
           } else {
             alert('unsuccess');
           }
