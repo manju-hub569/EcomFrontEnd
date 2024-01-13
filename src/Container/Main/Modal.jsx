@@ -3,7 +3,11 @@ import './Main.css';
 import { useRef } from 'react';
 import { baseurl } from '../../methods/enpoints';
 
+import { useAlert } from 'react-alert'
+
 export default function Modal () {
+
+    const alert = useAlert()
 
     const userRef = useRef(null);
     const passRef = useRef(null);
@@ -12,7 +16,8 @@ export default function Modal () {
         try {
           const resp = await postCall(`${baseurl}login` , {username : userRef.current?.value, password : passRef.current?.value}) ;
           if(resp) {
-            alert('success');
+            closeModel();
+            alert.show('Login Success')
           } else {
             alert('unsuccess');
           }
@@ -21,6 +26,20 @@ export default function Modal () {
             alert('failed')
         }
     }
+
+    const closeModel = () => {
+        const modal = document.getElementById('exampleModalCenter');
+        if (modal) {
+          modal.classList.remove('show');
+          modal.style.display = 'none';
+          userRef.current.value = '';
+          passRef.current.value = '';
+          const modalBackdrop = document.getElementsByClassName('modal-backdrop')[0];
+          if (modalBackdrop) {
+            modalBackdrop.parentNode.removeChild(modalBackdrop);
+          }
+        }
+      };    
 
     return (
         <>
@@ -46,6 +65,10 @@ export default function Modal () {
                                     <button onClick = {SubForm}>
                                         Logn In
                                     </button>
+                                </div>
+
+                                <div className = "signUp-msg">
+                                    <mark>dont have account? <label>signup</label> </mark>
                                 </div>
 
                             </div>
