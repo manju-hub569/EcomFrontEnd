@@ -21,11 +21,12 @@ export default function Modal () {
             closeModel();
             showModal.show(resp.data.msg)
           } else {
-            alert('unsuccess');
+            showModal.show("Login Failed")
           }
         } catch (error) {
             console.log(error);
-            alert('failed')
+            closeModel();
+            showModal.show("Login Failed")
         }
     }
 
