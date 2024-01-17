@@ -6,6 +6,8 @@ import { baseurl } from '../../methods/enpoints';
 import { useAlert } from 'react-alert'
 import { setCookie } from '../../methods/method';
 
+import Modalsignup from './Modalsignup';
+
 export default function Modal () {
 
     const showModal = useAlert()
@@ -21,11 +23,12 @@ export default function Modal () {
             closeModel();
             showModal.show(resp.data.msg)
           } else {
-            alert('unsuccess');
+            showModal.show("Login Failed")
           }
         } catch (error) {
             console.log(error);
-            alert('failed')
+            closeModel();
+            showModal.show("Login Failed")
         }
     }
 
@@ -41,7 +44,11 @@ export default function Modal () {
             modalBackdrop.parentNode.removeChild(modalBackdrop);
           }
         }
-      };    
+      };   
+      
+      const signUP = () => {
+        closeModel();
+      }
 
     return (
         <>
@@ -65,18 +72,22 @@ export default function Modal () {
 
                                 <div className = "log-btn">
                                     <button onClick = {SubForm}>
-                                        Logn In
+                                        Login
                                     </button>
                                 </div>
 
                                 <div className = "signUp-msg">
-                                    <mark>dont have account? <label>signup</label> </mark>
+                                    <mark>dont have account? 
+                                        <label data-toggle="modal" data-target="#exampleModalCenter2" onClick = {signUP} >signup</label>
+                                     </mark>
                                 </div>
 
                             </div>
                         </div>
                 </div>
             </div>
+
+            <Modalsignup />
         </>
     )
 }

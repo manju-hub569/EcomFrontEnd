@@ -7,14 +7,21 @@ import { baseurl } from '../../methods/enpoints';
 
 const CardItems = ({items}) => {
 
-    const addToCart = () => {
-        postCall(`${baseurl}addToCart` , {
-            userid : "65840c38bd36b9ede0c46bba", title : "test" , price : "234" , description : "test" , category : "test" , image : "test"
-        }).then(data => {
+    const addToCart = async () => {
+        try {
+            const data = await postCall(`${baseurl}addToCart` , {
+                userid : "65840c38bd36b9ede0c46bba", title : "test" , price : "234" , description : "test" , category : "test" , image : "test"
+            });
+            
             if(data) {
                 console.log('add to cart successfully')
             }
-        });
+
+        } catch (error) {
+            console.log(error);
+            alert("unsuccess");
+        }
+
     }
 
     return (
