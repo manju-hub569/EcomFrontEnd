@@ -4,8 +4,11 @@ import { CiHeart } from "react-icons/ci";
 import { BsCart } from "react-icons/bs";
 import { postCall } from '../../methods/apimethods';
 import { baseurl } from '../../methods/enpoints';
+import { useAlert } from 'react-alert';
 
 const CardItems = ({items}) => {
+
+    const showModal = useAlert()
 
     const addToCart = async () => {
         try {
@@ -14,12 +17,12 @@ const CardItems = ({items}) => {
             });
             
             if(data) {
-                console.log('add to cart successfully')
+                showModal.show('Added to cart successfully')
             }
 
         } catch (error) {
             console.log(error);
-            alert("unsuccess");
+            showModal.show("Please Login")
         }
 
     }

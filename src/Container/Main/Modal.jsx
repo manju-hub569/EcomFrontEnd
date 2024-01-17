@@ -3,7 +3,7 @@ import './Main.css';
 import { useRef } from 'react';
 import { baseurl } from '../../methods/enpoints';
 
-import { useAlert } from 'react-alert'
+import { useAlert } from 'react-alert';
 import { setCookie } from '../../methods/method';
 
 import Modalsignup from './Modalsignup';
