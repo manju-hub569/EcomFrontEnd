@@ -27,7 +27,7 @@ export default function Modal () {
           }
         } catch (error) {
             console.log(error);
-            closeModel();
+            // closeModel();
             showModal.show("Login Failed")
         }
     }

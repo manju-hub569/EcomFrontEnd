@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
+import { postCall } from '../../methods/apimethods';
+import { baseurl } from '../../methods/enpoints';
+import { useAlert } from 'react-alert'
 
 const Modalsignup = () => {
+
+    const showModal = useAlert()
 
     const [data , setData] = useState({
         username : "",
@@ -17,9 +22,18 @@ const Modalsignup = () => {
         setData({...data , [name] : value});
     }
 
-    const subForm = (e) => {
+    const subForm = async (e) => {
         e.preventDefault();
-        console.log(data);
+        try {
+            let resp = await postCall(`${baseurl}signup` , data);
+            if(resp) {
+                showModal.show('Signup Successfully');
+            }            
+        } catch (error) {
+            console.log(error);
+            showModal.show('Signup Failed');
+        }
+
     }
 
     return (
