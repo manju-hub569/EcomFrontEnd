@@ -26,15 +26,30 @@ const Modalsignup = () => {
         e.preventDefault();
         try {
             let resp = await postCall(`${baseurl}signup` , data);
-            if(resp) {
-                showModal.show('Signup Successfully');
-            }            
+            if(resp.data.data === 'Register Successfull') {
+                closeSignModel();
+                showModal.show(resp.data.data);
+            } else {
+                showModal.show(resp.data.data)
+            }       
         } catch (error) {
             console.log(error);
             showModal.show('Signup Failed');
         }
 
     }
+
+    const closeSignModel = () => {
+        const modal = document.getElementById('exampleModalCenter2');
+        if (modal) {
+          modal.classList.remove('show');
+          modal.style.display = 'none';
+          const modalBackdrop = document.getElementsByClassName('modal-backdrop')[0];
+          if (modalBackdrop) {
+            modalBackdrop.parentNode.removeChild(modalBackdrop);
+          }
+        }
+      }
 
     return (
         <>
