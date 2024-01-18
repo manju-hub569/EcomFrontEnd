@@ -5,16 +5,23 @@ import { BsCart } from "react-icons/bs";
 import { postCall } from '../../methods/apimethods';
 import { baseurl } from '../../methods/enpoints';
 import { useAlert } from 'react-alert';
+import { getCookie } from '../../methods/method';
 
 const CardItems = ({items}) => {
 
     const showModal = useAlert()
 
     const addToCart = async () => {
+
+        const headers = {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${getCookie}`
+        };
+
         try {
             const data = await postCall(`${baseurl}addToCart` , {
                 userid : "65840c38bd36b9ede0c46bba", title : "test" , price : "234" , description : "test" , category : "test" , image : "test"
-            });
+            }, headers);
             
             if(data) {
                 showModal.show('Added to cart successfully')
@@ -27,7 +34,7 @@ const CardItems = ({items}) => {
 
     }
 
-    
+
     return (
         <>
             <div className = "cards">
