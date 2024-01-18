@@ -27,6 +27,7 @@ const CardItems = ({items}) => {
 
     }
 
+    
     return (
         <>
             <div className = "cards">
