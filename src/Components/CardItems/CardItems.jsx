@@ -23,7 +23,9 @@ const CardItems = ({items}) => {
                 userid : "65840c38bd36b9ede0c46bba", title : "test" , price : "234" , description : "test" , category : "test" , image : "test"
             }, headers);
             
-            if(data) {
+            if(data.data.status === false) {
+                showModal.show('Please Login');
+            } else {
                 showModal.show('Added to cart successfully')
             }
 
