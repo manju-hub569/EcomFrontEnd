@@ -15,7 +15,7 @@ const CardItems = ({items}) => {
 
         const headers = {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${getCookie}`
+            'Authorization': `Bearer ${getCookie('token')}`
         };
 
         try {

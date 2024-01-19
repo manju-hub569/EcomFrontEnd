@@ -12,9 +12,10 @@ export const getCall = (url , headers = {}) => {
 }
 
 export const postCall = (url , body , headers = {}) => {
+    console.log('ppp', headers);
     return new Promise( async (res, rej) => {
         try {
-            let data = await axios.post(url , body , headers);
+            let data = await axios.post(url , body , {headers});
             res(data);            
         } catch (error) {
             rej(error);
