@@ -23,6 +23,7 @@ export function Navbar () {
 
                     <div className = "listCont">
                         <ul>
+                            <li onClick = {() => dispatch(apiCall())}>All</li>
                             <li onClick = {() => dispatch(apicallcateg('electronics'))}>Electronics</li>
                             <li onClick = {() => dispatch(apicallcateg('jewelery'))}>Jewelery</li>
                             <li onClick = {() => dispatch(apicallcateg(`men's%20clothing`))}>Men's Cloth</li>

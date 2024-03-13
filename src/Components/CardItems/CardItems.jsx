@@ -20,7 +20,7 @@ const CardItems = ({items}) => {
 
         try {
             const data = await postCall(`${baseurl}addToCart` , {
-                userid : "65840c38bd36b9ede0c46bba", title : "test" , price : "234" , description : "test" , category : "test" , image : "test"
+                userid : "65ae88a3c7023d977b7ade16", title : items.title , price : items.price , description : items.description , category : items.category , image : items.image
             }, headers);
             
             if(data.data.status === false) {
