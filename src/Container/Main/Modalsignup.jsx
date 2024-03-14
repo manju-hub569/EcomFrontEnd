@@ -25,13 +25,13 @@ const Modalsignup = () => {
     const subForm = async (e) => {
         e.preventDefault();
         try {
-            let resp = await postCall(`${baseurl}signup` , data);
-            if(resp.data.data === 'Register Successfull') {
+            let resp = await postCall(`${baseurl}register` , data);
+            if(resp.data.success === true) {
                 closeSignModel();
-                showModal.show(resp.data.data);
+                showModal.show(resp.data.msg);
             } else {
                 showModal.show(resp.data.data)
-            }       
+            }
         } catch (error) {
             console.log(error);
             showModal.show('Signup Failed');
