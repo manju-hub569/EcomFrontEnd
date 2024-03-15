@@ -5,7 +5,7 @@ import { BsCart } from "react-icons/bs";
 import { postCall } from '../../methods/apimethods';
 import { baseurl } from '../../methods/enpoints';
 import { useAlert } from 'react-alert';
-import { getCookie } from '../../methods/method';
+import { getStorage } from '../../methods/method';
 
 const CardItems = ({items}) => {
 
@@ -13,15 +13,10 @@ const CardItems = ({items}) => {
 
     const addToCart = async () => {
 
-        const headers = {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${getCookie('token')}`
-        };
-
         try {
             const data = await postCall(`${baseurl}addToCart` , {
-                userid : "65ae88a3c7023d977b7ade16", title : items.title , price : items.price , description : items.description , category : items.category , image : items.image
-            }, headers);
+                userid : getStorage('userid'), title : items.title , price : items.price , description : items.description , category : items.category , image : items.image
+            });
             
             if(data.data.status === false) {
                 showModal.show('Please Login');
@@ -31,7 +26,11 @@ const CardItems = ({items}) => {
 
         } catch (error) {
             console.log(error);
-            showModal.show("Please Login")
+            if(error.response.data.error.code === 11000) {
+                showModal.show("Product Already Present")
+            } else {
+                showModal.show("Added to cart unsuccessfully")
+            }
         }
 
     }

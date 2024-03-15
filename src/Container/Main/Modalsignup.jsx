@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { postCall } from '../../methods/apimethods';
 import { baseurl } from '../../methods/enpoints';
 import { useAlert } from 'react-alert'
+import { setStorage } from '../../methods/method';
 
 const Modalsignup = () => {
 
@@ -29,8 +30,9 @@ const Modalsignup = () => {
             if(resp.data.success === true) {
                 closeSignModel();
                 showModal.show(resp.data.msg);
+                setStorage("userid",resp.data.data.insertedId)
             } else {
-                showModal.show(resp.data.data)
+                showModal.show(resp.data.data);
             }
         } catch (error) {
             console.log(error);

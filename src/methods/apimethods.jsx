@@ -1,6 +1,12 @@
 import axios from 'axios';
+import { getCookie } from './method';
 
-export const getCall = (url , headers = {}) => {
+const headers = {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${getCookie('token')}`
+};
+
+export const getCall = (url) => {
     return new Promise(async (res, rej) => {
         try {
             let data = await axios.get(url , headers);
@@ -11,7 +17,7 @@ export const getCall = (url , headers = {}) => {
     })
 }
 
-export const postCall = (url , body , headers = {}) => {
+export const postCall = (url , body) => {
     return new Promise( async (res, rej) => {
         try {
             let data = await axios.post(url , body , {headers});
