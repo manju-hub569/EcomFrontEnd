@@ -40,7 +40,7 @@ export const getReducer = (state = init , action) => {
 
 export const apiCall = () => {
     return (dispatch) => {
-        getCall(`${baseurl}categAllProd`).then((data) => {
+        getCall(`${baseurl}getAllProducts`).then((data) => {
             const categ = data.data.data.map(val => val);
             dispatch(getApiCall(categ));
         })
